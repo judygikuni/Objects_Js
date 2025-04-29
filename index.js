@@ -58,7 +58,25 @@ console.log(employees)
  // prints each student's average score, and if the average is above 70, 
  // print "Pass"; otherwise, print "Fail" next to their name. (5 pts)
 
+let scores = {
+    Judy: [10,50,60,20],
+    Hannah: [5,9,45,60],
+    Kamau: [80,60,70,40]
+}
 
+function studentGrades(scores){
+    let newscores= Object.entries(scores)
+    newscores.forEach(([studentName,grades]) => {
+      if ( grades.reduce((accum,grades) => accum+grades,0)/grades.length){
+        console.log(`${studentName} has passed`)
+      } else{
+                console.log(`${studentName} has failed`)
+      }
+    }
+
+    )
+}
+studentGrades(scores)
 
 
 
@@ -93,15 +111,4 @@ function User(username, email, isActive){
  }
 
  activeUsers(users)
- 
-
-
-
-
- //You have an array of destination objects, each with name, distance (in km), 
- // and budgetRequired (in dollars). Write a function that accepts a maximum 
- // distance and a budget and returns all destinations the user can afford and 
- // reach within that distance. If none are found, return "No destinations available
- //  under your budget and distance". (5 pts)
-
  
